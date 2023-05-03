@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nim game</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script src="game.js"></script>
+    <script src="script.js"></script>
+    <link rel="shortcut icon" href="#">
+</head>
+
+<body onload="loadMainPage()">
+
+    <!-- Header -->
+    <div id="header">
+        <div class="brand">
+            <div id="brandClick" onclick="loadMainPage()">N<span>!</span>M</div>
+            <div id="welcome"></div>
+        </div>
+        <div class="list">
+            <ul class="buttonList">
+                <li class="buttonList" onclick="loadMainPage()"><a>Home</a></li>
+                <li class="buttonList" onclick="showInfo()"><a>Info</a></li>
+                <li class="buttonList" onclick="showOnlineRanks()"><a id="onlineRanks">Online Ranks</a></li>
+                <li class="buttonList" onclick="showGame()"><a id="gameButton">Game</a></li>
+                <li class="buttonList"><button type="button" id="buttonLeave" onclick="logOut()">Leave</button></li>
+            </ul>
+        </div>
+        <hr>
+    </div>
+    <!-- End Header -->
+
+    <!-- Intro Section -->
+    <div id="intro">
+        <div class="logo">
+            <img src="logo.png" alt="logo">
+        </div>
+        <div class="apr">
+            <h1>Welcome to<span></span></h1>
+            <h1 class="hover-underline">N!M Game<span></span></h1>
+            
+            <div id="showLogin">
+                <form id="userInputForm">
+                    <input id="userInput" type="text" placeholder="Username" name="username">
+                    <input id="passwordInput" type="password" placeholder="Password" name="password">
+                </form>
+                <button class="button" id="buttonIn" type="submit" onclick="logIn()">Log In</button>
+                <p>Don't have an account? We create one when you log in!</p>
+                <p id="messageBox"></p>
+                <!-- <div id="registerForm">
+                    <br>
+                    <p id="registerPara">Don't have an account? Create one now</p>
+                    <button id="registerButton" onclick="registerButton()">Register</button>
+                </div>
+                <button id="logBackPage" style="display: none;" onclick="logBackPage()">Go Back</button> -->
+            </div>
+            <!--
+            <button type="button" id="playButton" onclick="loginBox()">Play</button>
+            <div id="showLogin">
+                <form id="userInputForm">
+                    <input id="userInput" type="text" placeholder="Username" name="username">
+                    <input id="passwordInput" type="password" placeholder="Password" name="password">
+                </form>
+                <button class="button" id="buttonIn" type="submit" onclick="logIn()">Log In</button>
+                <div id="registerForm">
+                    <br>
+                    <p id="registerPara">Don't have an account? Create now</p>
+                    <button id="registerButton" onclick="registerButton()">Register</button>
+                    <p id="messageBox"></p>
+                </div>
+            </div>
+            -->
+            <button class="button" id="buttonCont" type="button" onclick="contButton()">Continue</button>
+        </div>
+    </div>
+    <!-- End Intro Section -->
+
+    <!-- Info Section -->
+    <div id="info">
+        <div class="info container">
+            <div class="infoText">
+                <h1><a href="https://en.wikipedia.org/wiki/Nim" target="_blank">About N!M</a></h1>
+                <p>The <span>Nim Game</span> is a two players strategy game.</p>
+                <br>
+                <p>It can be played versus a computer <i>(singleplayer mode)</i> or versus another player
+                    <i>(multiplayer mode)</i>.</p>
+                <br>
+                <p>It's played in turns and each player has to take one or more pieces from one of the piles.</p>
+                <br>
+                <p>The game objective is to be the last player to take the last piece of the board.</p>
+                <br>
+                <p>If you want to play, log in first on <i>"Home"</i> page!</p>
+                <br>
+                <p>We hope you have fun!</p>
+                <img src="logo.png" alt="logo">
+            </div>
+        </div>
+    </div>
+    <!-- End Info Section -->
+
+    <div id="configuration">
+        <!-- <div id="gameMessages"></div> -->
+
+        <div id="gameForm">
+            <div id="gameType">
+                <h1>Choose the opponent</h1>
+                <form id="gameTypeForm">
+                    <input type="radio" name="gameOptions" value="singleplayer" onclick="singlePlayerForm()" checked>
+                    Singleplayer
+                    <input type="radio" name="gameOptions" value="multiplayer" onclick="multiPlayerForm()">
+                    Multiplayer
+                </form>
+            </div>
+
+            <div id="gameOptions">
+                <div id="singlePlayerOptions">
+                    <h1>Choose the difficulty</h1>
+                    <form id="difficultyForm">
+                        <input type="radio" name="difficultyOptions" value="Easy"> Easy
+                        <input type="radio" name="difficultyOptions" value="Medium" checked> Medium
+                        <input type="radio" name="difficultyOptions" value="Hard"> Hard
+                    </form>
+                    <h1>Starting Player</h1>
+                    <form id="startingForm">
+                        <input type="radio" name="startingOptions" value="player" checked> Player
+                        <input type="radio" name="startingOptions" value="pc"> Computer
+                    </form>
+                </div>
+                <div id="boardSize">
+                    <h1>Choose the board size</h1>
+                    <form id="boardSizeForm">
+                        <input type="text" placeholder="Ex. 4" name="boardSizeInput">
+                    </form>
+                </div>
+                <button type="submit" id="startButton" onclick="play()">Start Game</button>
+            </div>
+        </div>
+        <div class="popRules">
+            <button class="button" type="button" onclick="showHTP()">How to play</button>
+            <button class="button" type="button" onclick="showGRL()">Game Rules</button>
+            <button id="classificationButton" class="button" type="button" onclick="showTable()">Classification</button>
+        </div>
+
+        <div id="howToPlay">
+            <ul>
+                <li>Start choosing the configuration that you want</li>
+                <li>After that click "Start Game" and the game will show on the side</li>
+                <li>To make a play, just click on a piece and all the ones on the left are removed</li>
+                <li>You can reread the rules by clicking in "Game Rules"</li>
+                <li>The "Classification" button will show how many wins the players and/or the computer have</li>
+                <li>After the game start, a button "Leave" will appear and you can give up the game by clicking it</li>
+                <li>When the game ends, a button "Play Again" will appear and you can restart the game with the same
+                    configuration by clicking it</li>
+            </ul>
+            <button class="buttonClose" type="button" onclick="closeHTP()">Close</button>
+        </div>
+
+        <div id="gameRules">
+            <ul>
+                <li>Wait your turn to play</li>
+                <li>Each player, in turn, must take at least one piece, but they may take more than one as long as they
+                    all come from the same row.</li>
+                <li>It's allowed to make a row empty, effectively removing the row out of the game</li>
+                <li>The player taking the last piece wins</li>
+                <li>Have fun!</li>
+            </ul>
+            <button class="buttonClose" type="button" onclick="closeGRL()">Close</button>
+        </div>
+
+        <div id="showTable">
+            <h2>Table of victories and game count</h2>
+            <table>
+                <tr>
+                    <th id="emptyTh"></th>
+                    <th>Easy</th>
+                    <th>Medium</th>
+                    <th>Hard</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <th id="userName"></th>
+                    <td id="userTableEasy">0</td>
+                    <td id="userTableMedium">0</td>
+                    <td id="userTableHard">0</td>
+                    <td id="userTableTotal">0</td>
+                </tr>
+                <tr>
+                    <th id="pcTablePC">PC</th>
+                    <td id="pcTableEasy">0</td>
+                    <td id="pcTableMedium">0</td>
+                    <td id="pcTableHard">0</td>
+                    <td id="pcTableTotal">0</td>
+                </tr>
+                <tr>
+                    <th>Total</th>
+                    <th id="gameModeTotalEasy">0</th>
+                    <th id="gameModeTotalMedium">0</th>
+                    <th id="gameModeTotalHard">0</th>
+                    <th id="gameTotal">0</th>
+                </tr>
+            </table>
+            <button class="buttonClose" type="button" onclick="closeTBL()">Close</button>
+        </div>
+
+        <div id="timer"></div>
+        <div id="gameMessages"></div>
+
+        <div id="playAgain">
+            <button id="playAgainButton" class="button" type="button" onclick="play()">Play Again</button>
+        </div>
+        <div id="leaveGame">
+            <button class="button" id="leaveGameButton" type="button" onclick="buttonLeave()">Leave Game</button>
+        </div>
+    </div>
+
+    <div id="game">
+        <div id="showGame"></div>
+    </div>
+
+    <div id="onlineRanksDiv">
+        <div class="onlineRanksDiv container">
+            <input type="number" id="onlineRanksInput" placeholder="Size of the games to search">
+            <button type="button" id="onlineRanksButton" onclick="getOnlineRanks()">Search</button>
+            <table id="onlineRanksTable" >
+                <!-- <tr>
+                    <th>Player</th>
+                    <th>Games</th>
+                    <th>Wins</th>
+                    <th>Losses</th>
+                </tr> -->
+            </table> 
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,591 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    /* font-size: 10px; */
+    font-family: 'League Spartan', sans-serif;
+    scroll-behavior: smooth;
+}
+a {
+    text-decoration: none;
+    color: white;
+    /* cursor: pointer; */
+}
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #5468FF;
+}
+button {
+    font-size: 18px;
+    height: 48px;
+    padding: 0 25px;
+    margin-top: 10px;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #fff;
+    background: -moz-radial-gradient(100% 100% at 100% 0%, #8789d1 0%, #5468FF 100%);
+    background: -webkit-radial-gradient(100% 100% at 100% 0%, #8789d1 0%, #5468FF 100%);
+    background: radial-gradient(100% 100% at 100% 0%, #8789d1 0%, #5468FF 100%);
+    box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px rgb(58 65 111 / 50%);
+    /* will-change: box-shadow, transform; */
+    animation: display 1s ease;
+    animation-delay: 2s;
+}
+
+button:hover {
+    box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #3c4fe0;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/*                  Header Section                        */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+
+#header {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+}
+#header #brandClick {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: white;
+    margin-top: 12px;
+    margin-left: 10px;
+    cursor: pointer;
+    width: fit-content;
+}
+#header .brand span {
+    color: #9899D4;
+}
+#header .list{
+	text-align: center;
+	vertical-align: middle;
+	width: 50%;
+  	margin: 0 auto;
+  	display: inline-block;
+  	position: absolute;
+  	top: 50%;
+  	left: 45%;
+  	transform: translate(-50%,-50%);
+  	min-width: 550px;
+    margin-left: 45%;
+}
+#header .buttonList{
+	display: inline;
+}
+#header .buttonList a{
+	font-size: 150%;
+	font-weight: bold;
+	color: white;
+    text-align: center;
+    padding: 15px 15px 13.5px 15px;
+    text-decoration: none;
+}
+#header .buttonList a:hover{
+	background-color: #9899D4;
+	cursor: pointer;
+}
+#header hr {
+    border: 1px solid #9899D4;
+}
+#header #welcome {
+    color: white;
+    margin-left: 10px;
+}
+#header #buttonLeave, #gameButton, #onlineRanks {
+    display: none;
+}
+#header button{
+	font-size: 18px;
+    height: 48px;
+    padding: 0 25px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    margin-right: 20%;
+}
+
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/*                  End Header Section                    */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+
+
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/*                  Intro Section                         */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+
+#intro {
+    background-image: -moz-radial-gradient(circle, rgba(135, 137, 209, 1) 0%, rgba(12, 76, 230, 1) 100%) !important;
+    background-image: -webkit-radial-gradient(circle, rgba(135, 137, 209, 1) 0%, rgba(12, 76, 230, 1) 100%) !important;
+    background-image: radial-gradient(circle, rgba(135, 137, 209, 1) 0%, rgba(12, 76, 230, 1) 100%) !important;
+    /* z-index: 1; */
+    overflow: hidden;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #5468FF;
+}
+
+#intro h1 {
+    display: block;
+    width: fit-content;
+    font-size: 4rem;
+    position: relative;
+    color: transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1s;
+}
+
+#intro h1 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    /* background-color: #9899D4; */
+    animation: text_reveal_box 1s ease;
+    animation-delay: .5s;
+    background: -moz-linear-gradient(to right, rgba(135, 137, 209, 1) 25%, rgba(12, 76, 230, 1) 100%);
+    background: -webkit-linear-gradient(to right, rgba(135, 137, 209, 1) 25%, rgba(12, 76, 230, 1) 100%);
+    background: -o-linear-gradient(to right, rgba(135, 137, 209, 1) 25%, rgba(12, 76, 230, 1) 100%);
+    background: linear-gradient(to right, rgba(135, 137, 209, 1) 25%, rgba(12, 76, 230, 1) 100%);
+    background-size: 100% 5px, 0 3px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    /* transition: background-size 400ms; */
+}
+#intro #showLogin {
+    margin-top: 10px;
+    color: white;   
+    /* display: none; */
+    display: block;
+}
+#userInput{
+	float: left;
+	width: 95px;
+	height: 25px;
+}
+#passwordInputDiv{
+	margin-left: 20px;
+	display: inline-block;
+}
+#passwordInput{
+	width: 95px;
+	height: 25px;
+    margin-left: 10px;
+}
+#intro #buttonCont {
+    display: none;
+}
+#intro #registerForm {
+    display: block;
+}
+#intro #registerForm #registerButton {
+    margin-top: 0%;
+}
+#intro #logBackPage {
+    display: none;
+}
+
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/*                  End Intro Section                     */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/*                    Info Section                        */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+#info {
+    display: none;
+}
+#info .container{
+    text-align: center;
+    display: flex;
+}
+#info .infoText h1 {
+    margin-bottom: 50px;
+    /* text-decoration: underline; */
+    color: #ffffff;
+}
+#info a {
+    background: -moz-linear-gradient(to right,rgba(12, 76, 230, 1),rgba(12, 76, 230, 1)), linear-gradient(to right, rgba(135, 137, 209, 1) 75%, rgba(12, 76, 230, 1));
+    background: -webkit-linear-gradient(to right,rgba(12, 76, 230, 1),rgba(12, 76, 230, 1)), linear-gradient(to right, rgba(135, 137, 209, 1) 75%, rgba(12, 76, 230, 1));
+    background: -o-linear-gradient(to right,rgba(12, 76, 230, 1),rgba(12, 76, 230, 1)), linear-gradient(to right, rgba(135, 137, 209, 1) 75%, rgba(12, 76, 230, 1));
+    background: linear-gradient(to right,rgba(12, 76, 230, 1),rgba(12, 76, 230, 1)), linear-gradient(to right, rgba(135, 137, 209, 1) 75%, rgba(12, 76, 230, 1));
+    background-size: 100% 3px, 0 3px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+}
+#info a:hover {
+    background-size: 0 3px, 100% 3px;
+}
+#info .infoText {
+    text-align: center;
+	margin: 0 auto;
+    font-size: 1.9rem;
+    width: 50%;
+}
+#info .infoText span {
+    color: #ffffff;
+    font-weight: bolder;
+}
+#info img {
+    width: 15%;
+    height: 15%;
+}
+
+#onlineRanksDiv {
+    display: none;
+}
+
+#onlineRanksDiv .container{
+    text-align: center;
+    display: flex;
+}
+
+#onlineRanksTable table, th, td{
+    margin: 0 auto;
+    width: 50%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 1.4rem;
+    color: #ffffff;
+}
+
+#onlineRanksTable th, td {
+    padding: 5px;
+    text-align: left;
+}
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/*                  End Info Section                      */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/*                 Configuration Section                  */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+
+#configuration {
+    width: 25%;
+    float: left;
+    /* display: flex; */
+    text-align: center;
+    flex-direction: column;
+    display: none;
+
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: #5468FF;
+}
+#configuration #gameForm {
+    /* margin-top: 10%; */
+    border: 3px solid #9899D4;
+    border-radius: 50px;
+    padding: 10px 15px 15px 15px;
+    background-color: #8789D1;
+    font-size: 1.4rem;
+}
+#configuration #gameTypeForm, #difficultyForm, #startingForm {
+    font-size: 1rem;
+}
+#configuration input {
+    margin-top: 10px;
+}
+#configuration #boardSize input {
+    width: 25%;
+}
+#configuration h1 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: black;
+    margin-top: 15px;
+    text-align: center;
+}
+#configuration h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: black;
+    margin-top: 15px;
+    text-align: center;
+}
+#configuration .popRules {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#configuration #classificationButton {
+    display: none;
+}
+
+#configuration #howToPlay {
+    /* display: none; */
+    border: 3px solid #9899D4;
+    background-color: #8789d1;
+    border-radius: 50px;
+    text-align: left;
+    font-size: 18px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-top: 5%;
+}
+#configuration #gameRules {
+    /* display: none; */
+    border: 3px solid #9899D4;
+    background-color: #8789d1;
+    border-radius: 50px;
+    text-align: left;
+    font-size: 18px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-top: 5%;
+}
+#configuration #showTable {
+    /* display: none; */
+    border: 3px solid #9899D4;
+    background-color: #8789d1;
+    border-radius: 50px;
+    text-align: left;
+    font-size: 18px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-top: 5%;
+}
+#configuration #showTable table {
+    width: 100%;
+    text-align: center;
+    border: 3px solid #5468FF;
+    border-collapse: collapse;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+#showTable th, td {
+    text-align: center;
+    padding: 5px;
+    border: 3px solid #5468FF;
+    border-collapse: collapse;
+}
+#showTable #emptyTh {
+    background-color: #5468FF;
+    /* opacity: 0.5; */
+}
+#configuration ul {
+    list-style-type: none;
+}
+#configuration ul li::before {
+    content: "\2022";
+    color: #0c4ce6;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+#configuration .buttonClose {
+    /* visibility: hidden;  */
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/*                End Configuration Section               */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+
+
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/*                     Game Section                       */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+#game {
+    float: left;
+    max-height: 100vh;
+    width: 75%;
+    /* display: flex; */
+    /* align-items: baseline; */
+    justify-content: center;
+    /* display: none; */
+    /* margin-top: 74px; */
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: #5468FF;
+}
+
+#game #showGame {
+    display: inline-block;
+    border: 2px solid #9899D4;
+    border-top: 1px;
+
+    max-height: 100%;
+    text-align: center;
+    overflow: scroll;
+    width: 100%;
+    height: 100%;
+    padding-top: 74px;
+    /* padding: 10px 15px 10px 15px; */
+}
+
+#game .boardDiv{
+	text-align: center;
+    margin: 0 auto;
+	padding-top: 50px;
+}
+
+#game .boardDiv img{
+	width: 50px;
+	height: 50px;
+}
+
+#game .cellDiv{
+	display: block;
+}
+
+/* #game .pieceDiv{
+	width: 90px;
+	display: inline-block;
+}  */
+#leaveGame, #playAgainButton{
+	display: none;
+}
+.pieceHovered{
+	opacity: 0.5;
+}
+.pieceDeleted{
+	visibility: hidden;
+}
+
+/* #gameMessages {
+    margin-top: -50%;
+    padding-bottom: 100px;
+} */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/*                    End Game Section                    */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+
+
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/*                    GameStats Section                   */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+#gameStats {
+    width: 25%;
+    float: left;
+    /* display: flex; */
+    text-align: center;
+    flex-direction: column;
+    /* display: none; */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #b2b8e6;
+}
+
+#gameStats h1 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: black;
+    margin-top: 15px;
+    text-align: center;
+}
+
+#gameStats #playAgain {
+    display: none;
+}
+
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/*                End GameStats Section                   */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+
+
+/* Game Stats */
+/* #gameStats .container {
+    float:left;
+    min-height: 100vh;
+    width: 25%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+} */
+/* End Game Stats*/
+
+
+
+
+
+
+
+/* Keyframes */
+@keyframes text_reveal_box {
+    50% {
+        width: 50%;
+        left: 0;
+    }
+
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+
+@keyframes text_reveal {
+    100% {
+        color: white;
+    }
+}
+/* End Keyframes */
